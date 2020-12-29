@@ -5,8 +5,11 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     private List<Camera> cameras;
-    [SerializeField] private float initialFOV = 20f;
-    [SerializeField] private Transform bg;
+    [SerializeField] private Transform target;
+    [SerializeField] private float baseFOV = 20f;
+    [SerializeField] private float minFOV = 10f;
+    [SerializeField] private float maxFOV = 120f;
+
 
     private void Awake()
     {
@@ -19,19 +22,19 @@ public class CameraController : MonoBehaviour
         // Initialize camera FoV;
         foreach (Camera cam in cameras)
         {
-            cam.fieldOfView = initialFOV;
+            cam.fieldOfView = baseFOV;
         }
 
         // Set background video height = camera height;
-        bg.position = new Vector3(bg.position.x, transform.position.y, bg.position.z);
+        target.position = new Vector3(target.position.x, transform.position.y, target.position.z);
     }
 
     private void Update()
     {
-        // Update camera FoV according to self position z;
+        // Update camera FoV (with clamping) according to self position z;
         foreach (Camera cam in cameras)
         {
-            cam.fieldOfView = Mathf.Clamp(initialFOV + 5 * (transform.position.z - 30f), 10f, 120f);
+            cam.fieldOfView = Mathf.Clamp(baseFOV + 5 * (transform.position.z - 30f), minFOV, maxFOV);
         }
     }
 

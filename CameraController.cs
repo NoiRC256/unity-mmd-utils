@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private List<Camera> cameras;
+    private List<Camera> cameras;
     [SerializeField] private float initialFOV = 20f;
     [SerializeField] private Transform bg;
 

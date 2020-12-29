@@ -3,7 +3,7 @@
 Some scripts to assist MMD-style video creation in Unity.
 
 ## CameraController
-Updates FoV of all child cameras depending on distance to Bg, useful for creating a "3D" feel when using video backgrounds playing on a flat surface.
+Updates FoV of all child cameras depending on distance to target, useful for creating a "3D" feel when using video backgrounds playing on a flat surface.
 
 Also works with Cinemachine.
 ### Usage
@@ -11,7 +11,7 @@ Also works with Cinemachine.
 
 - Assign cameras as its children.
 
-- Set the desired target Bg and tweak InitialFoV.
+- Set the desired target and tweak baseFoV.
 
 - If you wish to use Cinemachine & vcams, simply assign CinemachineBrain to this parent GameObject.
 

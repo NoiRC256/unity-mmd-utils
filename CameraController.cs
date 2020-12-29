@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private Camera[] cameras;
+    [SerializeField] private List<Camera> cameras;
     [SerializeField] private float initialFOV = 20f;
     [SerializeField] private Transform bg;
 
     private void Awake()
     {
         // Get Camera component of each children;
-        int i = 0;
-        foreach (Transform child in transform)
+        for(int i=0; i< transform.childCount; i++)
         {
-            cameras[i] = child.GetComponent<Camera>();
-            i++;
+            cameras.Add(transform.GetChild(i).GetComponent<Camera>());
         }
 
         // Initialize camera FoV;
@@ -36,6 +34,7 @@ public class CameraController : MonoBehaviour
             cam.fieldOfView = Mathf.Clamp(initialFOV + 5 * (transform.position.z - 30f), 10f, 120f);
         }
     }
+
 
 
 }

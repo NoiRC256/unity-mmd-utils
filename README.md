@@ -17,7 +17,9 @@ Also works with Cinemachine.
 
 ## SignalManager
 
-Updates ambient lighting colors on-demand.
+Signal management script
+
+- Updates ambient lighting colors on-demand.
 
 You can add more colors and functionality.
 ### Usage
@@ -30,7 +32,7 @@ You can add more colors and functionality.
 - On the SignalReceiver track, place SignalEmitter tags where you want to update ambient lighting color, select a desired Signal for each tag to emit
 
 ## Rotator
-Rotates stuff at a set speed or smoothly swing from side to side.
+Rotates Transform at a set speed or smoothly swing from side to side.
 
 SwingMode currently works properly when object starts at 0°.
 ### Usage

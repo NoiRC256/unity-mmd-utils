@@ -1,50 +1,45 @@
 # unity-mmd-utils
 
-Some scripts to assist MMD-style video creation in Unity.
+Some of the stagework scripts for unity, used in https://www.bilibili.com/video/BV1ZA411s7Tx
 
 ## CameraController
-Updates FoV of all child cameras depending on distance to target, useful for creating a "3D" feel when using video backgrounds playing on a flat surface.
+Updates FoV of all child cameras based on distance to target, useful for creating a 3D feel when using video backgrounds o some flat surface. Works with Cinemachine.
 
-Also works with Cinemachine.
 ### Usage
-- Assign to an empty GameObject.
+- Assign to empty GameObject.
 
-- Assign cameras as its children.
+- Assign cameras as children.
 
-- Set the desired target and tweak baseFoV.
+- Set target, tweak baseFoV.
 
 - If you wish to use Cinemachine & vcams, simply assign CinemachineBrain to this parent GameObject.
 
 ## SignalManager
 
-Signal management script
+A simple management script for timeline signals.
 
 - Updates ambient lighting colors on-demand.
 
-You can add more colors and functionality.
 ### Usage
-- Assign to an empty GameObject.
+- Assign to empty GameObject.
 
-- Create a SignalReceiver with desired Signals
+- Create a SignalReceiver with Signals
 
-- For each Signal, set the SignalManager, select the SignalManager.UpdateAmbientColor function and assign an integer to each: 1 corresponds to Color1; 2 corresponds to Color2, and so on.
+- For each Signal, set the SignalManager, select the SignalManager.UpdateAmbientColor function and assign an integer to each: 1 corresponds to Color1; 2 corresponds to Color2, etc.
 
-- On the SignalReceiver track, place SignalEmitter tags where you want to update ambient lighting color, select a desired Signal for each tag to emit
+- On the SignalReceiver track, place SignalEmitter tags where you want to update ambient lighting color, select some Signal for each tag to emit
 
 ## Rotator
-Rotates Transform at a set speed or smoothly swing from side to side.
+Rotates Transform at set speed or smoothly swing back and forth.
 
-SwingMode currently works properly when object starts at 0°.
 ### Usage
-- Assign to GameObject, set parameters.
+- Assign to GameObject and set parameters.
 
 ## FaceDirectionManager
 
-Sends GameObject/bone's current heading to a material's shader. 
-
-Originally used for debugging Genshin style face shading.
+Originally used for debugging Genshin style face shading. Sends GameObject/bone's current heading to some shader. 
 
 ### Usage
-- Shader needs to receive _DirectionVector.
+- Shader needs to accept _DirectionVector.
 
 - Set target transform and name of target material.

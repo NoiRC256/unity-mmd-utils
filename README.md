@@ -3,7 +3,7 @@
 Some of the stagework scripts for unity, used in https://www.bilibili.com/video/BV1ZA411s7Tx
 
 ## CameraController
-Updates FoV of all child cameras based on distance to target, useful for creating a 3D feel when using video backgrounds o some flat surface. Works with Cinemachine.
+Updates FoV of all child cameras based on distance to target, useful for creating a 3D feel when using video backgrounds on some flat surface. Works with Cinemachine.
 
 ### Usage
 - Assign to empty GameObject.
